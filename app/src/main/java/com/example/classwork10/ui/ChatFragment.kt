@@ -4,24 +4,24 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.classwork10.R
 import com.example.classwork10.databinding.FragmentChatBinding
-import com.example.classwork10.databinding.SinglechatItemBinding
 import com.example.classwork10.ui.adapter.ChattingAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class ChatFragment : Fragment()
+class ChatFragment : Fragment(){
 
     private lateinit var binding: FragmentChatBinding
     private lateinit var chatAdapter: ChattingAdapter
-    private val viewmodel: ChattingViewModel by viewModels
+    private val viewmodel: ChattingViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentChatBinding.inflate(this, R.layout.singlechat_item, false)
+        binding = FragmentChatBinding.inflate(layoutInflater, R.layout.fragment_chat, false)
 
         setupAdapter()
         setupObservers()
