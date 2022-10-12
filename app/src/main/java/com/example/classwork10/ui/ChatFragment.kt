@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.classwork10.R
 import com.example.classwork10.databinding.FragmentChatBinding
+import com.example.classwork10.databinding.SinglechatItemBinding
 import com.example.classwork10.ui.adapter.ChattingAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,7 +21,7 @@ class ChatFragment : Fragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentChatBinding.inflate(this, R.layout.fragment_chat, false)
+        binding = FragmentChatBinding.inflate(this, R.layout.singlechat_item, false)
 
         setupAdapter()
         setupObservers()
